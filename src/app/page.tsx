@@ -1,7 +1,8 @@
 import { Suspense } from "react";
-// import { unstable_cacheTag as cacheTag, revalidateTag } from "next/cache";
+import { unstable_cacheTag as cacheTag } from "next/cache";
+import { unstable_cacheLife as cacheLife } from "next/cache";
 
-export default function Home() {
+export default  function Home() {
   return (
     <div className="text-center font-bold mt-10">
       <h2 className="text-2xl text-center ">
@@ -27,8 +28,14 @@ async function SuspendedComponent() {
 }
 
 async function getRandomData() {
-  // "use cache"
-  // cacheTag("randomNumber","math")
+  "use cache"
+  cacheTag("randomNumber","math")
+  cacheLife({
+    stale:1,
+    revalidate:5,
+    expire:10,
+
+  })
 
   // revalidateTag("/")
   await new Promise((resolve) => setTimeout(resolve, 1000));
