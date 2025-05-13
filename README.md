@@ -1,4 +1,4 @@
-The dynamicIO flag is an experimental feature in Next.js that causes data fetching operations in the App Router to be excluded from pre-renders unless they are explicitly cached. This can be useful for optimizing the performance of dynamic data fetching in Server Components.
+The dynamicIO is an experimental feature in Next.js that causes data fetching operations in the App Router to be excluded from pre-renders unless they are explicitly cached. This can be useful for optimizing the performance of dynamic data fetching in Server Components.
 
 It is useful if your application requires fresh data fetching during runtime rather than serving from a pre-rendered cache.
 
